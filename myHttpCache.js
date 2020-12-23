@@ -2,7 +2,7 @@
  * @Author       mingyong.g
  * @Date         2020-12-23 12:47:27
  * @LastEditors   mingyong.g
- * @LastEditTime  2020-12-23 19:26:10
+ * @LastEditTime  2020-12-23 21:26:48
  * @Description  前端请求缓存方案
  * @FilePath     :\MyHttpCache\myHttpCache.js
  ****************************************************/
@@ -35,7 +35,7 @@ class ItemCache {
  * @Date 2020-12-23 14:53:02
  ****************************************************/
 class HttpCache {
-	static cachemap = new Map();
+	// static cachemap = new Map();
 
 	// 判断缓存是否超时 => 超时则返回 true
 	static isOverTime(name) {
@@ -85,6 +85,8 @@ class HttpCache {
 		HttpCache.cachemap.set(name, itemCache);
 	}
 }
+
+HttpCache.cachemap = new Map();
 
 // 生成key值错误
 const generateKeyError = new Error("Can't generate key from name and argument");
